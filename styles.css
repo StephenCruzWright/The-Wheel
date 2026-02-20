@@ -81,6 +81,30 @@ button {
   line-height: 1.65;
 }
 
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 10px;
+  background: #1e2230;
+  margin-bottom: 6px;
+  border-radius: 8px;
+}
+
+.remove-btn {
+  border: none;
+  background: #ff5c5c;
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+  padding: 2px 8px;
+  cursor: pointer;
+}
+
+.remove-btn:hover {
+  background: #ff2e2e;
+}
+
 .pointer {
   margin: 0 auto -0.5rem;
   width: 0;

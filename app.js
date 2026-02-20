@@ -1,4 +1,4 @@
-const palette = ["#ff6b6b", "#ffd166", "#06d6a0", "#4dabf7", "#c77dff", "#f08a5d", "#90be6d", "#f8961e"];
+const palette = ["#ff6b6b", "#ffd166", "#06d6a0", "#4dabf7", "#c77dff", "#f08a5d", "#90be6d", "#43aa8b", "#f94144", "#f3722c", "#577590", "#f9844a"];
 
 const tasks = [];
 let spinning = false;
