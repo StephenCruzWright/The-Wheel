@@ -1,6 +1,6 @@
 const palette = ["#ff6b6b", "#ffd166", "#06d6a0", "#4dabf7", "#c77dff", "#f08a5d", "#90be6d", "#f8961e"];
 
-const tasks = ["Write tests", "Refactor code", "Read docs"];
+const tasks = [];
 let spinning = false;
 let wheelRotation = 0;
 
@@ -66,9 +66,13 @@ function spinWheel() {
   const selected = Math.floor(Math.random() * tasks.length);
   const slice = 360 / tasks.length;
   const centerOfSlice = selected * slice + slice / 2;
-  const target = 360 - centerOfSlice;
+  let target = 270 - centerOfSlice;
+  const currentNormalized = ((wheelRotation % 360) + 360) % 360;
+  let delta = target - currentNormalized;
+
+  if (delta < 0) delta += 360;
   const extraTurns = 360 * (5 + Math.floor(Math.random() * 3));
-  wheelRotation += extraTurns + target;
+  wheelRotation += extraTurns + delta;
 
   wheel.style.transform = `rotate(${wheelRotation}deg)`;
 
