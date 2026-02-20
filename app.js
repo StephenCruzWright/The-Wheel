@@ -14,11 +14,30 @@ const ctx = wheel.getContext("2d");
 
 function updateTaskList() {
   taskList.innerHTML = "";
-  tasks.forEach((task) => {
+
+  tasks.forEach((task, index) => {
     const li = document.createElement("li");
-    li.textContent = task;
+    li.className = "task-item";
+
+    const span = document.createElement("span");
+    span.textContent = task;
+
+    const remove = document.createElement("button");
+    remove.textContent = "✖";
+    remove.className = "remove-btn";
+
+    remove.addEventListener("click", () => {
+      if (spinning) return; // prevent deletion mid-spin
+      tasks.splice(index, 1);
+      drawWheel();
+      updateTaskList();
+      result.textContent = "Task removed.";
+    });
+
+    li.append(span, remove);
     taskList.append(li);
   });
+
   spinBtn.disabled = tasks.length < 2 || spinning;
 }
 
