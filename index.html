@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Wheel</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
   </head>
   <body>
     <main class="app">
@@ -15,7 +16,13 @@
         <form id="task-form">
           <label for="task-input">Add a task</label>
           <div class="input-row">
-            <input id="task-input" type="text" placeholder="e.g., Write docs" maxlength="80" required />
+            <input
+              id="task-input"
+              type="text"
+              placeholder="e.g., Brush Teeth"
+              maxlength="80"
+              required
+            />
             <button type="submit">Add</button>
           </div>
         </form>
@@ -24,9 +31,16 @@
 
       <section class="wheel-section" aria-label="Task wheel">
         <div class="pointer" aria-hidden="true"></div>
-        <canvas id="wheel" width="420" height="420" aria-label="Spinning task wheel"></canvas>
+        <canvas
+          id="wheel"
+          width="420"
+          height="420"
+          aria-label="Spinning task wheel"
+        ></canvas>
         <button id="spin-btn" type="button">Spin the wheel</button>
-        <p id="result" class="result" aria-live="polite">Add at least 2 tasks to spin.</p>
+        <p id="result" class="result" aria-live="polite">
+          Add at least 2 tasks to spin.
+        </p>
       </section>
     </main>
 
