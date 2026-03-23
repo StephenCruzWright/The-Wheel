@@ -27,7 +27,7 @@ function updateTaskList() {
     remove.className = "remove-btn";
 
     remove.addEventListener("click", () => {
-      if (spinning) return; // prevent deletion mid-spin
+      if (spinning) return;
       tasks.splice(index, 1);
       drawWheel();
       updateTaskList();
